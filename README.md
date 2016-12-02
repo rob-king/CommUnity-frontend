@@ -1,4 +1,4 @@
-# CommUnity (Sangkhom)- Front-End Document
+# CommUnity (Sangkhom)- ReadMe Document
 
 ## User Stories:
 1. I want to see product details.

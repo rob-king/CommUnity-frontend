@@ -7,7 +7,7 @@
 
 ## MVP Features:
 1. Comments Section (Model)
-2. Product Page (Model)
+2. Product Page (Listing and Individual) (Model)
 
 ## Silver Features:
 1. Up-voting

@@ -1,6 +1,6 @@
 # CommUnity (Sangkhom) - ReadMe Document
 
-**Description:** CommUnity is a application that contains a listing os user submitted product ideas that contribute to the social good of others.
+**Description:** CommUnity is a application that contains a listing of user submitted product ideas that contribute to the social good of others.
 
 ## User Stories:
 1. I want to see a listing of products.

@@ -1,0 +1,26 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "**Description:** CommUnity is a application that contains a listing of user submitted product ideas that contribute to the social good of others.",
+  "main": "app.js",
+  "dependencies": {
+    "angular-ui-bootstrap": "^2.3.0",
+    "angular-ui-router": "^0.3.2",
+    "init": "^0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rob-king/CommUnity-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rob-king/CommUnity-frontend/issues"
+  },
+  "homepage": "https://github.com/rob-king/CommUnity-frontend#readme"
+}

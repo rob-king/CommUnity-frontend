@@ -1,4 +1,4 @@
-# CommUnity (Sangkhom) - ReadMe Document
+# CommUnity (Pasakhom) - ReadMe Document
 
 **Description:** CommUnity is a application that contains a listing of user submitted product ideas that contribute to the social good of others.
 

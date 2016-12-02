@@ -17,6 +17,10 @@
 1. Listing of Similar Products
 2. Rspec Testing
 
+## Technologies Used:
+1. Bootstrap - Styling
+2. Angular - Front-End Framework
+
 
 ## UI/Front-End Notes:
 

@@ -1,0 +1,18 @@
+.nav {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+.navbar {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+/*Below removed the margin spacing.*/
+.navbar-default {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}

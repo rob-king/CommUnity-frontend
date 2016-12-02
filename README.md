@@ -1,9 +1,12 @@
-# CommUnity (Sangkhom)- ReadMe Document
+# CommUnity (Sangkhom) - ReadMe Document
+
+**Description:** CommUnity is a application that contains a listing os user submitted product ideas that contribute to the social good of others.
 
 ## User Stories:
-1. I want to see product details.
-2. I want to post feedback to products.
-3. I want to tag products.
+1. I want to see a listing of products.
+2. I want to see product details.
+3. I want to post feedback to products.
+4. I want to tag products.
 
 ## MVP Features:
 1. Comments Section (Model)

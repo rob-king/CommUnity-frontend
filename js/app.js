@@ -11,6 +11,18 @@ function RouterFunction($stateProvider){
     controller: "indexController",
     controllerAs: "vm"
   });
+  $stateProvider.state("listing",{
+    url: "/listing.html",
+    templateUrl: "js/ng-views/listing.html",
+    controller: "indexController",
+    controllerAs: "vm"
+  });
+  $stateProvider.state("faq", {
+    url: "/faq.html",
+    templateUrl: "js/ng-views/faq.html",
+    controller: "indexController",
+    controllerAs: "vm"
+  })
 }
 //
 function IndexControllerFunction(){

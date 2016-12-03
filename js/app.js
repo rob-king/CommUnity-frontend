@@ -28,6 +28,12 @@ function RouterFunction($stateProvider){
     controller: "IndexController",
     controllerAs: "vm"
   });
+  $stateProvider.state("new", {
+    url: "/new.html",
+    templateUrl: "js/ng-views/new.html",
+    controller: "IndexController",
+    controllerAs: "vm"
+  })
   $stateProvider.state("faq", {
     url: "/faq.html",
     templateUrl: "js/ng-views/faq.html",

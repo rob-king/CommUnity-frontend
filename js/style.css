@@ -2,6 +2,10 @@
   border: 5px solid black;
 }
 
+.border3 {
+  border: 1px solid black;
+}
+
 .nav {
   padding: 0px;
   margin: 0px;

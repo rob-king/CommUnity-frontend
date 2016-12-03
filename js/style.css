@@ -2,9 +2,19 @@
   border: 5px solid black;
 }
 
-.border3 {
-  border: 1px solid black;
+.border2 {
+  border: 1px solid blue;
 }
+
+.border3 {
+  border: 1px solid red;
+}
+
+.container {
+  padding: 0px;
+}
+
+
 
 .nav {
   padding: 0px;
@@ -23,4 +33,10 @@
   padding: 0px;
   margin: 0px;
   border: 0px;
+}
+
+footer {
+  margin-top: 25px;
+  padding: 10px;
+  background-color: yellow;
 }

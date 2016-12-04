@@ -25,7 +25,7 @@ function RouterFunction($stateProvider){
     controllerAs: "vm"
   });
   $stateProvider.state("productNew", {
-    url: "products/new",
+    url: "/products/new",
     templateUrl: "js/ng-views/products/new.html",
     controller: "ProductNewController",
     controllerAs: "vm"

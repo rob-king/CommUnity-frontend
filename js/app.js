@@ -5,6 +5,7 @@ angular
 .controller("ProductIndexController", ["CommunityFactory", ProductIndexControllerFunction])
 .controller("ProductShowController", ["CommunityFactory", "$stateParams", ProductShowControllerFunction])
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
+.controller("ProductEditController", ["CommunityFactory", "$state", "$stateParams", ProductEditControllerFunction])
 
 
 
@@ -34,11 +35,19 @@ function RouterFunction($stateProvider){
     templateUrl: "js/ng-views/products/show.html",
     controller: "ProductShowController",
     controllerAs: "vm"
+  });
+  $stateProvider.state("productEdit", {
+    url: "/products/:id/edit",
+    templateUrl: "js/ng-views/products/edit.html",
+    controller: "ProductEditController",
+    controllerAs: "vm"
   })
 }
 
 function CommunityFactoryFunction($resource){
-  return $resource("http://localhost:3000/products/:id");
+  return $resource("http://localhost:3000/products/:id", {}, {
+    update: {method: "PUT"}
+  })
 }
 
 function ProductIndexControllerFunction(CommunityFactory){
@@ -53,5 +62,12 @@ function ProductNewControllerFunction(CommunityFactory, $state){
   this.product = new CommunityFactory();
   this.create = function(){
     this.product.$save().then(response => $state.go("productIndex"))
+  }
+}
+
+function ProductEditControllerFunction(CommunityFactory, $state, $stateParams){
+  this.product = CommunityFactory.get({id: $stateParams.id})
+  this.update = function(){
+    this.product.$update({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
 }

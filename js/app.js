@@ -70,4 +70,7 @@ function ProductEditControllerFunction(CommunityFactory, $state, $stateParams){
   this.update = function(){
     this.product.$update({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
+  this.destroy = function(){
+    this.product.$delete({id: $stateParams.id}).then(response => $state.go("productIndex"))
+  }
 }

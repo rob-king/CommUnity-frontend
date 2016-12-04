@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-sm-12">
-    <h2>{{vm.product.name}} <a data-ui-sref="productEdit({id: product.id})">Edit Product</a></h2>
+    <h2>{{vm.product.name}}</h2>
+    <p><a data-ui-sref="productEdit({id: product.id})">Edit Product</a></p>
+    <p><a data-ng-click="vm.destroy()">Delete Product</a></p>
+
   </div>
 </div>
 <div class="row">

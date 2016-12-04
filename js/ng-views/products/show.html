@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-sm-12">
-    <h2>Project1</h2>
+    <h2>{{vm.product.name}}</h2>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-4">
-    <img src="https://placeimg.com/450/300/tech">
+    <img src="{{vm.product.imageURL}}">
   </div>
   <div class="col-sm-2">
   </div>
@@ -17,26 +17,21 @@
   <div class="col-sm-3">
   </div>
 </div>
+
 <div class="row">
   <div class="col-sm-12">
     <p>
-      Lorem ipsum dolor sit amet, vitae ante. Velit nonummy, et eget vehicula nisl pharetra maecenas tortor. Donec a est sodales sed, ut posuere ante malesuada aliquam. Et sed nec ornare, sociis ac suscipit sagittis ante rutrum, commodo scelerisque, mauris in justo commodo. Dictum vivamus iaculis et donec nisl laoreet. Et dolor, vestibulum non in est, metus scelerisque wisi at sollicitudin consequat.
-    </p>
-    <p>
-      Lacus volutpat inceptos ante rutrum est, nulla mattis posuere tincidunt, integer dis ut vestibulum at arcu. Lorem sem a auctor ridiculus justo, tempus ac in. Porta ipsum amet ut, vestibulum a, tempor lorem. Lectus rutrum dolor dictumst sed. Mauris arcu, pellentesque ut sem nibh dolor.
-    </p>
-    <p>
-      Lobortis sit et dolor lectus in, aliquet sit vivamus phasellus, at adipiscing lorem ac vestibulum, diam porttitor ultricies. Arcu morbi ornare tincidunt platea justo, enim elementum, eget libero viverra vitae ullamcorper sit tempus, pede nulla quam. Dictum vel in mollis semper nullam, lobortis adipiscing mi quis erat et cras. Mi risus rhoncus euismod, ut luctus posuere wisi et suspendisse, nulla litora eget sed tortor elit quis, etiam purus velit ultrices varius urna malesuada, dis quis pellentesque.
+      {{vm.product.description}}
     </p>
   </div>
 </div>
-
 
 <div class="row">
   <div class="col-sm-12">
     <hr></hr>
   </div>
 </div>
+
 <div class="row">
   <div class="col-sm-12">
     <h2>Comments</h2>
@@ -46,11 +41,13 @@
     <h4>Jane Doe</h4>
   </div>
 </div>
+
 <div class="row">
   <div class="col-sm-12">
     <hr></hr>
   </div>
 </div>
+
 <div class="row">
   <div class="col-sm-2">
   </div>
@@ -58,7 +55,7 @@
     <form>
       <div class="form-group">
         <label for="exampleInputEmail2">Feedback</label>
-        <textarea class="form-control" rows="5" data-ng-model=""></textarea>
+        <textarea class="form-control" rows="5"></textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputName2">Name</label>

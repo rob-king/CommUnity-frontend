@@ -3,6 +3,7 @@ angular
 .config(["$stateProvider", RouterFunction])
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
 .controller("IndexController", ["CommunityFactory", IndexControllerFunction])
+.controller("ShowController", ["CommunityFactory", "$stateParams", ShowControllerFunction])
 
 
 
@@ -12,21 +13,21 @@ function RouterFunction($stateProvider){
     url: "/",
     templateUrl: "js/ng-views/welcome.html"
   });
-  $stateProvider.state("listing",{
-    url: "/listing.html",
-    templateUrl: "js/ng-views/listing.html",
+  $stateProvider.state("productIndex",{
+    url: "/products",
+    templateUrl: "js/ng-views/products/index.html",
     controller: "IndexController",
     controllerAs: "vm"
   });
-  $stateProvider.state("show", {
-    url: "/show.html",
-    templateUrl: "js/ng-views/show.html",
-    // controller: "ShowController",
-    // controllerAs: "vm"
+  $stateProvider.state("productShow", {
+    url: "/products/:id",
+    templateUrl: "js/ng-views/products/show.html",
+    controller: "ShowController",
+    controllerAs: "vm"
   });
-  $stateProvider.state("new", {
-    url: "/new.html",
-    templateUrl: "js/ng-views/new.html",
+  $stateProvider.state("productNew", {
+    url: "products/new",
+    templateUrl: "js/ng-views/products/new.html",
     // controller: "NewController",
     // controllerAs: "vm"
   })
@@ -42,4 +43,9 @@ function CommunityFactoryFunction($resource){
 
 function IndexControllerFunction(CommunityFactory){
   this.products = CommunityFactory.query()
+}
+
+function ShowControllerFunction(CommunityFactory, $stateParams){
+  this.product = CommunityFactory.get({id: $stateParams.id})
+  console.log(this.products)
 }

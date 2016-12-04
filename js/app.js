@@ -7,8 +7,6 @@ angular
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
 .controller("ProductEditController", ["CommunityFactory", "$state", "$stateParams", ProductEditControllerFunction])
 
-
-
 function RouterFunction($stateProvider){
   $stateProvider.state("welcome", {
     url: "/",
@@ -44,6 +42,7 @@ function RouterFunction($stateProvider){
   })
 }
 
+
 function CommunityFactoryFunction($resource){
   return $resource("http://localhost:3000/products/:id", {}, {
     update: {method: "PUT"}
@@ -56,6 +55,12 @@ function ProductIndexControllerFunction(CommunityFactory){
 
 function ProductShowControllerFunction(CommunityFactory, $stateParams){
   this.product = CommunityFactory.get({id: $stateParams.id})
+
+  addComment = function(){
+    this.product.comments.push({
+      body: body,
+      author: author,
+    });
 }
 
 function ProductNewControllerFunction(CommunityFactory, $state){

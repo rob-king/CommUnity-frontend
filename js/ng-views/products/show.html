@@ -4,6 +4,7 @@
     <p><a data-ui-sref="productEdit({id: product.id})">Edit Product</a></p>
   </div>
 </div>
+
 <div class="row">
   <div class="col-sm-4">
     <img src="{{vm.product.imageURL}}">
@@ -36,10 +37,6 @@
 <div class="row">
   <div class="col-sm-12">
     <h2>Comments</h2>
-    <p>
-      Lorem ipsum dolor sit amet, augue sed at hac, enim nam magna elit ante, elit amet semper eros erat, mollis orci eget tincidunt. Ullamcorper integer eget nec interdum, vestibulum labore nam consequat, quis volutpat id et, justo enim nullam non ut. Explicabo nec quisque urna nulla, praesent quis cras vestibulum laoreet. Wisi tortor feugiat sed sagittis, non ut euismod ultrices, id ut nam semper amet.Feedback Text
-    </p>
-    <h4>Jane Doe</h4>
   </div>
 </div>
 
@@ -49,18 +46,35 @@
   </div>
 </div>
 
+<div data-ng-repeat="comment in vm.product.comments">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>
+        {{comment.body}}
+      </p>
+      <h4>Submitted by {{comment.author}}</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <hr></hr>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-sm-2">
   </div>
   <div class="col-sm-8">
-    <form>
+    <form ng-submit="addComment()">
       <div class="form-group">
-        <label for="exampleInputEmail2">Feedback</label>
-        <textarea class="form-control" rows="5"></textarea>
+        <label for="productcomments">Feedback</label>
+        <textarea class="form-control" rows="5" ng-model="body"></textarea>
       </div>
       <div class="form-group">
-        <label for="exampleInputName2">Name</label>
-        <input type="text" class="form-control" placeholder="Enter Your Name">
+        <label for="commentsname">Name</label>
+        <input type="text" class="form-control" placeholder="Enter Your Name" ng-model="author">
       </div>
       <button type="submit" class="btn btn-default">Submit Feedback</button>
     </form>

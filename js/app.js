@@ -56,11 +56,11 @@ function ProductIndexControllerFunction(CommunityFactory){
 function ProductShowControllerFunction(CommunityFactory, $stateParams){
   this.product = CommunityFactory.get({id: $stateParams.id})
 
-  addComment = function(){
-    this.product.comments.push({
-      body: body,
-      author: author,
-    });
+  this.addComment = function(){
+    console.log("clicked")
+    this.product.$save(this.product.comment.push({comments: $stateParams.product.comment
+    }))
+  }
 }
 
 function ProductNewControllerFunction(CommunityFactory, $state){

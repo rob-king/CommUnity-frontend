@@ -4,17 +4,13 @@ angular
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
 .controller("IndexController", ["CommunityFactory", IndexControllerFunction])
 
-function CommunityFactoryFunction($resource){
-  return $resource( "http://localhost:8080/");
-}
+
 
 function RouterFunction($stateProvider){
   console.log("log: router function works")
   $stateProvider.state("welcome", {
     url: "/",
-    templateUrl: "js/ng-views/welcome.html",
-    controller: "IndexController",
-    controllerAs: "vm"
+    templateUrl: "js/ng-views/welcome.html"
   });
   $stateProvider.state("listing",{
     url: "/listing.html",
@@ -25,23 +21,25 @@ function RouterFunction($stateProvider){
   $stateProvider.state("show", {
     url: "/show.html",
     templateUrl: "js/ng-views/show.html",
-    controller: "IndexController",
-    controllerAs: "vm"
+    // controller: "ShowController",
+    // controllerAs: "vm"
   });
   $stateProvider.state("new", {
     url: "/new.html",
     templateUrl: "js/ng-views/new.html",
-    controller: "IndexController",
-    controllerAs: "vm"
+    // controller: "NewController",
+    // controllerAs: "vm"
   })
   $stateProvider.state("faq", {
     url: "/faq.html",
     templateUrl: "js/ng-views/faq.html",
-    controller: "IndexController",
-    controllerAs: "vm"
   })
 }
-//
+
+function CommunityFactoryFunction($resource){
+  return $resource("http://localhost:3000/products/:id");
+}
+
 function IndexControllerFunction(CommunityFactory){
-  console.log("log: index controller works")
+  this.products = CommunityFactory.query()
 }

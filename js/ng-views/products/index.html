@@ -1,10 +1,22 @@
-<div class="row">
-  <div data-ng-repeat="product in vm.products">
-    <div class="clearfix" ng-if="$index %3==0"></div>
-    <div class="col-sm-4 border">
+<div data-ng-repeat="product in vm.products">
+  <div class="row productIndex">
+    <!-- <div class="clearfix" ng-if="$index %3==0"></div> -->
+    <div class="col-sm-2">
+      <img src="{{product.imageURL}}" class="imageIndex" height="100px">
+    </div>
+    <div class="col-sm-10">
       <a data-ui-sref="productShow({id: product.id})"><h2>{{product.name}}</h2></a>
-      <img src="{{product.imageURL}}" height="200px">
-      <p>{{product.description | words: 20}}</p>
+      <p>{{product.description | words: 10}}</p>
+      <p>
+        <button type="button" name="button" class="btn btn-default"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> 2</button>
+        <button type="button" name="button" class="btn btn-default"><i class="fa fa-comments" aria-hidden="true"></i> 5</button>
+      </p>
+      <!-- <p>{{product.comment.length}}</p> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <hr></hr>
     </div>
   </div>
 </div>

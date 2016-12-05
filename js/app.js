@@ -59,14 +59,14 @@ function ProductIndexControllerFunction(CommunityFactory){
   this.products = CommunityFactory.query()
 }
 
-function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateParams){
+function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateParams, $state){
   this.product = CommunityFactory.get({id: $stateParams.id})
   this.comment = new CommentFactory()
 
   this.addComment = function(){
     console.log(this)
     console.log(this.comment)
-    this.comment.$save({product_id:$stateParams.id}).then(console.log("whoa"))
+    this.comment.$save({product_id: $stateParams.id}).then(console.log("whoa"))
   }
 }
 

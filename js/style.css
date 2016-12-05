@@ -1,5 +1,5 @@
 .border {
-  border: 5px solid black;
+  border: 1px solid black;
 }
 
 .border2 {
@@ -14,23 +14,21 @@
   padding: 0px;
 }
 
-.nav {
+/*.navbar {
   padding: 0px;
   margin: 0px;
   border: 0px;
+}*/
+
+.productIndex {
+  margin-top: 10px;
 }
 
-.navbar {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-}
-
-/*Below removed the margin spacing.*/
-.navbar-default {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
+.imageIndex {
+  border: 5px double black;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 footer {

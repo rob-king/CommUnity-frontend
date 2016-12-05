@@ -1,7 +1,7 @@
-<div data-ng-repeat="product in vm.products">
+<div data-ng-repeat="product in vm.products | orderBy: '-votes'">
   <div class="row productIndex">
     <div class="col-sm-2">
-      <img src="{{product.imageURL}}" class="imageIndex" height="100px">
+      <img ng-src="{{product.imageURL}}" class="imageIndex" height="100px">
     </div>
     <div class="col-sm-10">
       <a data-ui-sref="productShow({id: product.id})"><h2>{{product.name}}</h2></a>

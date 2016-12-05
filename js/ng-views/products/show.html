@@ -14,7 +14,7 @@
   <div class="col-sm-3">
     <h3>Author Profile</h3>
     <p>Jane Doe</p>
-    <p>Rating: *****</p>
+    <p><button type="button" name="button" class="btn btn-default" ng-click="vm.addVote(vm.product)"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> {{vm.product.votes}}</button></p>
   </div>
   <div class="col-sm-3">
   </div>
@@ -36,7 +36,7 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <h2>Comments</h2>
+    <h2>Discussion</h2>
   </div>
 </div>
 
@@ -69,14 +69,14 @@
   <div class="col-sm-8">
     <form>
       <div class="form-group">
-        <label for="productcomments">Feedback</label>
+        <label for="productcomments">Comment</label>
         <textarea class="form-control" rows="5" data-ng-model="vm.comment.body"></textarea>
       </div>
       <div class="form-group">
         <label for="commentsname">Name</label>
         <input type="text" class="form-control" placeholder="Enter Your Name" data-ng-model="vm.comment.author">
       </div>
-      <button type="submit" class="btn btn-default" data-ng-click="vm.addComment()">Submit Feedback</button>
+      <button type="submit" class="btn btn-default" data-ng-click="vm.addComment()">Submit Comment</button>
     </form>
   </div>
   <div class="col-sm-2">

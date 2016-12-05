@@ -2,8 +2,9 @@ angular
 .module("communityApp", ["ui.router", "ngResource", "ui.bootstrap"])
 .config(["$stateProvider", RouterFunction])
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
+.factory("CommentFactory", ["$resource", CommentFactoryFunction])
 .controller("ProductIndexController", ["CommunityFactory", ProductIndexControllerFunction])
-.controller("ProductShowController", ["CommunityFactory", "$stateParams", ProductShowControllerFunction])
+.controller("ProductShowController", ["CommunityFactory","CommentFactory", "$stateParams", ProductShowControllerFunction])
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
 .controller("ProductEditController", ["CommunityFactory", "$state", "$stateParams", ProductEditControllerFunction])
 
@@ -49,16 +50,23 @@ function CommunityFactoryFunction($resource){
   })
 }
 
+function CommentFactoryFunction($resource) {
+  return $resource("http://localhost:3000/products/:product_id/comments/:id", {}, {
+    update: {method: "PUT"}
+  })
+}
 function ProductIndexControllerFunction(CommunityFactory){
   this.products = CommunityFactory.query()
 }
 
-function ProductShowControllerFunction(CommunityFactory, $stateParams){
+function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateParams){
   this.product = CommunityFactory.get({id: $stateParams.id})
+  this.comment = new CommentFactory()
 
   this.addComment = function(){
-    this.product.$save(this.product.comment.push({comments: $stateParams.product.comment
-    }))
+    console.log(this)
+    console.log(this.comment)
+    this.comment.$save({product_id:$stateParams.id}).then(console.log("whoa"))
   }
 }
 

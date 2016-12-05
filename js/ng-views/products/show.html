@@ -70,11 +70,11 @@
     <form>
       <div class="form-group">
         <label for="productcomments">Feedback</label>
-        <textarea class="form-control" rows="5" data-ng-model="vm.product.comments.body"></textarea>
+        <textarea class="form-control" rows="5" data-ng-model="vm.comment.body"></textarea>
       </div>
       <div class="form-group">
         <label for="commentsname">Name</label>
-        <input type="text" class="form-control" placeholder="Enter Your Name" data-ng-model="vm.product.comments.author">
+        <input type="text" class="form-control" placeholder="Enter Your Name" data-ng-model="vm.comment.author">
       </div>
       <button type="submit" class="btn btn-default" data-ng-click="vm.addComment()">Submit Feedback</button>
     </form>

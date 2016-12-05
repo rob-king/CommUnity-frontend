@@ -57,7 +57,6 @@ function ProductShowControllerFunction(CommunityFactory, $stateParams){
   this.product = CommunityFactory.get({id: $stateParams.id})
 
   this.addComment = function(){
-    console.log("clicked")
     this.product.$save(this.product.comment.push({comments: $stateParams.product.comment
     }))
   }
@@ -76,6 +75,7 @@ function ProductEditControllerFunction(CommunityFactory, $state, $stateParams){
     this.product.$update({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
   this.destroy = function(){
+    console.log("click check")
     this.product.$delete({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
 }

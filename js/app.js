@@ -75,7 +75,6 @@ function ProductEditControllerFunction(CommunityFactory, $state, $stateParams){
     this.product.$update({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
   this.destroy = function(){
-    console.log("click check")
     this.product.$delete({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
 }

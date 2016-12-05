@@ -27,6 +27,11 @@
 .navbar-default .navbar-nav > li > a {
   color: white;
 }
+=======
+.jumbotron {
+  background-color: #FFFFFF;
+}
+
 
 .productIndex {
   margin-top: 10px;

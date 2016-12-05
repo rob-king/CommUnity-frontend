@@ -64,9 +64,11 @@ function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateP
   this.comment = new CommentFactory()
 
   this.addComment = function(){
-    console.log(this)
-    console.log(this.comment)
     this.comment.$save({product_id: $stateParams.id}).then(console.log("whoa"))
+  }
+  this.addVote = function(product){
+    console.log(this)
+    this.product.votes += 1;
   }
 }
 

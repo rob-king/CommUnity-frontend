@@ -3,8 +3,8 @@
     <div class="clearfix" ng-if="$index %3==0"></div>
     <div class="col-sm-4 border">
       <a data-ui-sref="productShow({id: product.id})"><h2>{{product.name}}</h2></a>
-      <img src="{{product.imageURL}}">
-      <p>{{product.description}}</p>
+      <img src="{{product.imageURL}}" height="200px">
+      <p>{{product.description | words: 20}}</p>
     </div>
   </div>
 </div>

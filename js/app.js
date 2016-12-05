@@ -1,5 +1,5 @@
 angular
-.module("communityApp", ["ui.router", "ngResource", "ui.bootstrap"])
+.module("communityApp", ["ui.router", "ngResource", "ui.bootstrap", "truncate"])
 .config(["$stateProvider", RouterFunction])
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
 .factory("CommentFactory", ["$resource", CommentFactoryFunction])

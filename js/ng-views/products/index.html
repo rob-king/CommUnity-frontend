@@ -9,9 +9,8 @@
       <p>{{product.description | words: 10}}</p>
       <p>
         <button type="button" name="button" class="btn btn-default"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> 2</button>
-        <button type="button" name="button" class="btn btn-default"><i class="fa fa-comments" aria-hidden="true"></i> 5</button>
+        <button type="button" name="button" class="btn btn-default"><i class="fa fa-comments" aria-hidden="true"></i> {{product.comments.length}}</button>
       </p>
-      <!-- <p>{{product.comment.length}}</p> -->
     </div>
   </div>
   <div class="row">

@@ -1,14 +1,14 @@
-<div data-ng-repeat="product in vm.products">
-  <div class="row productIndex">
+<div data-ng-repeat="product in vm.products | orderBy: '-votes'">
+  <div class="row">
     <div class="col-sm-2">
-      <img src="{{product.imageURL}}" class="imageIndex" height="100px">
+      <img ng-src="{{product.imageURL}}" class="imageIndex img-responsive">
     </div>
     <div class="col-sm-10">
       <a data-ui-sref="productShow({id: product.id})"><h2>{{product.name}}</h2></a>
       <p>{{product.description | words: 10}}</p>
       <p>
-        <button type="button" name="button" class="btn btn-default"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> {{product.votes}}</button>
-        <button type="button" name="button" class="btn btn-default"><i class="fa fa-comments" aria-hidden="true"></i> {{product.comments.length}}</button>
+        <button type="button" name="button" class="btn btn-success"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> {{product.votes}}</button>
+        <button type="button" name="button" class="btn btn-warning"><i class="fa fa-comments" aria-hidden="true"></i> {{product.comments.length}}</button>
       </p>
     </div>
   </div>

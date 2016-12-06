@@ -10,10 +10,6 @@
   border: 1px solid red;
 }
 
-.container {
-  padding: 0px;
-}
-
 .navbar {
   background: #00c6ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
@@ -27,21 +23,16 @@
 .navbar-default .navbar-nav > li > a {
   color: white;
 }
-=======
+
 .jumbotron {
   background-color: #FFFFFF;
 }
 
-
-.productIndex {
-  margin-top: 10px;
-}
-
 .imageIndex {
   border: 5px double black;
-  display: block;
-  margin: 0 auto;
   border-radius: 10px;
+  /*display: block;
+  margin: 0 auto;*/
 }
 
 footer {

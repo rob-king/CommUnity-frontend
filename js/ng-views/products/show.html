@@ -1,22 +1,23 @@
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-2">
+    <img class="imageIndex img-responsive" src="{{vm.product.imageURL}}">
+  </div>
+  <div class="col-sm-10">
     <h2>{{vm.product.name}}</h2>
-    <p><a data-ui-sref="productEdit({id: vm.product.id})">Edit Product</a></p>
+    <p>
+      {{vm.product.description | words: 5}}
+    </p>
+    <p>
+      <button type="button" name="button" class="btn btn-success" ng-click="vm.addVote(vm.product)"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> {{vm.product.votes}}</button>
+      <button type="button" name="button" class="btn btn-warning"><i class="fa fa-comments" aria-hidden="true"></i> {{vm.product.comments.length}}</button>
+      <button type="button" name="button" class-"btn btn-success" data-ui-sref="productEdit({id: vm.product.id})">Edit Product</button>
+    </p>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-4">
-    <img src="{{vm.product.imageURL}}">
-  </div>
-  <div class="col-sm-2">
-  </div>
-  <div class="col-sm-3">
-    <h3>Author Profile</h3>
-    <p>Jane Doe</p>
-    <p><button type="button" name="button" class="btn btn-default" ng-click="vm.addVote(vm.product)"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> {{vm.product.votes}}</button></p>
-  </div>
-  <div class="col-sm-3">
+<div class="row border">
+  <div class="col-sm-12">
+    Placeholder for photo slider
   </div>
 </div>
 

@@ -1,3 +1,19 @@
+
+h2, h3 {
+  font-family: 'Open Sans', sans-serif;
+  color: #e53935;
+  }
+
+  p  {
+    color: #005C97;
+    }
+
+  a {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  }
+
 .border {
   border: 1px solid black;
 }
@@ -14,7 +30,7 @@
   padding: 0px;
 }
 
-.navbar {
+.navbar, .home-callout {
   background: #00c6ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -22,16 +38,25 @@
 
 .navbar-default .navbar-brand {
   color: white;
+  font-family: 'Open Sens' sans-serif;
+}
+
+p.navbar-brand {
+font-size: 20px;
+font-weight: 600;
 }
 
 .navbar-default .navbar-nav > li > a {
   color: white;
 }
-=======
+
 .jumbotron {
-  background-color: #FFFFFF;
+  background-color: #00d2ff;
 }
 
+button.btn-default {
+  color: #005C97;
+}
 
 .productIndex {
   margin-top: 10px;
@@ -44,7 +69,7 @@
   border-radius: 10px;
 }
 
-footer {
+    /*footer {
   margin-top: 25px;
   padding: 10px;
   background-color: lemonchiffon;

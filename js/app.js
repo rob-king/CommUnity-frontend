@@ -4,7 +4,7 @@ angular
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
 .factory("CommentFactory", ["$resource", CommentFactoryFunction])
 .controller("ProductIndexController", ["CommunityFactory", ProductIndexControllerFunction])
-.controller("ProductShowController", ["CommunityFactory","CommentFactory", "$stateParams", ProductShowControllerFunction])
+.controller("ProductShowController", ["CommunityFactory","CommentFactory", "$stateParams", "$state", ProductShowControllerFunction])
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
 
 function RouterFunction($stateProvider){
@@ -63,7 +63,7 @@ function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateP
     })
   }
 
-  this.destroy = function($state){
+  this.destroy = function(){
     this.product.$delete({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
 

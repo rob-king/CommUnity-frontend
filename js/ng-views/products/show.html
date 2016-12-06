@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-sm-2">
     <img class="imageIndex img-responsive" src="{{vm.product.imageURL}}">
+    <p>
+      <button type="button" name="button" class-"btn btn-success" ng-click="showDiv = !showDiv">Edit Product</button>
+    </p>
   </div>
   <div class="col-sm-10">
     <h2>{{vm.product.name}}</h2>
@@ -8,9 +11,8 @@
       {{vm.product.description | words: 5}}
     </p>
     <p>
-      <button type="button" name="button" class="btn btn-success" ng-click="vm.addVote(vm.product)"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> {{vm.product.votes}}</button>
+      <button type="button" name="button" class="btn btn-success" ng-click="vm.addVote()"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></i> {{vm.product.votes}}</button>
       <button type="button" name="button" class="btn btn-warning"><i class="fa fa-comments" aria-hidden="true"></i> {{vm.product.comments.length}}</button>
-
     </p>
   </div>
 </div>
@@ -23,89 +25,81 @@
   </div>
 </div>
 
-<div class="row border">
+<div class="row">
   <div class="col-sm-12">
-    <button type="button" name="button" class-"btn btn-success" ng-click="showDiv = !showDiv">Edit Product</button>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <div ng-show="showDiv">
-        <form>
-          <div class="form-group">
-            <label for="productname">Project Name</label>
-            <input type="text" value="vm.product.name" class="form-control" data-ng-model="vm.product.name">
-          </div>
-          <div class="form-group">
-            <label for="projectimage">Project Image</label>
-            <input type="text" value="vm.product.imageURL" class="form-control" data-ng-model="vm.product.imageURL">
-          </div>
-          <div class="form-group">
-            <label for="productdescription">Product Description</label>
-            <textarea value="vm.product.description" class="form-control" rows="3" data-ng-model="vm.product.description"></textarea>
-          </div>
-          <button type="submit" class="btn btn-default" data-ng-click="vm.update()">Update</button>
-          <button type="submit" class="btn btn-default" data-ng-click="vm.destroy()">Delete</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-  <div class="row">
-    <div class="col-sm-12">
-      <hr></hr>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <h2>Discussion</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <hr></hr>
-    </div>
-  </div>
-
-  <div data-ng-repeat="comment in vm.product.comments">
-    <div class="row">
-      <div class="col-sm-12">
-        <p>
-          {{comment.body}}
-        </p>
-        <h4>Submitted by {{comment.author}}</h4>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <hr></hr>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-2">
-    </div>
-    <div class="col-sm-8">
+    <div ng-show="showDiv">
       <form>
         <div class="form-group">
-          <label for="productcomments">Comment</label>
-          <textarea class="form-control" rows="5" data-ng-model="vm.comment.body"></textarea>
+          <label for="productname">Project Name</label>
+          <input type="text" value="vm.product.name" class="form-control" data-ng-model="vm.product.name">
         </div>
         <div class="form-group">
-          <label for="commentsname">Name</label>
-          <input type="text" class="form-control" placeholder="Enter Your Name" data-ng-model="vm.comment.author">
+          <label for="projectimage">Project Image</label>
+          <input type="text" value="vm.product.imageURL" class="form-control" data-ng-model="vm.product.imageURL">
         </div>
-        <button type="submit" class="btn btn-default" data-ng-click="vm.addComment()">Submit Comment</button>
+        <div class="form-group">
+          <label for="productdescription">Product Description</label>
+          <textarea value="vm.product.description" class="form-control" rows="3" data-ng-model="vm.product.description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default" data-ng-click="vm.update()">Update</button>
+        <button type="submit" class="btn btn-default" data-ng-click="vm.destroy()">Delete</button>
       </form>
     </div>
-    <div class="col-sm-2">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <hr></hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Discussion</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <hr></hr>
+  </div>
+</div>
+
+<div data-ng-repeat="comment in vm.product.comments">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>
+        {{comment.body}}
+      </p>
+      <h4>Submitted by {{comment.author}}</h4>
+      <button type="submit" class="btn btn-default" data-ng-click="vm.removeComment()">Delete</button>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <hr></hr>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-8">
+    <form>
+      <div class="form-group">
+        <label for="productcomments">Comment</label>
+        <textarea class="form-control" rows="5" data-ng-model="vm.comment.body"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="commentsname">Name</label>
+        <input type="text" class="form-control" placeholder="Enter Your Name" data-ng-model="vm.comment.author">
+      </div>
+      <button type="submit" class="btn btn-default" data-ng-click="vm.addComment()">Submit Comment</button>
+    </form>
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>

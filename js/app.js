@@ -58,7 +58,9 @@ function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateP
   this.comment = new CommentFactory()
 
   this.update = function(){
-    this.product.$update({id: $stateParams.id})
+    this.product.$update({id: $stateParams.id}).then((response) => {
+      this.product = response
+    })
   }
 
   this.destroy = function($state){
@@ -66,11 +68,20 @@ function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateP
   }
 
   this.addComment = function(){
-    this.comment.$save({product_id: $stateParams.id}).then(console.log("whoa"))
+    this.comment.$save({product_id: $stateParams.id}).then((response) => {
+      this.product.comments = response.comments
+    })
   }
+
+  this.removeComment = function(){
+    this.comment.$delete({product_id: $stateParams.id}).then(console.log("delete comment"))
+  }
+
   this.addVote = function(){
     this.product.votes += 1;
-    this.product.$update({id: $stateParams.id})
+    this.product.$update({id: $stateParams.id}).then((response) => {
+      this.product = response
+    })
   }
 }
 

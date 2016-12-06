@@ -1,11 +1,19 @@
 angular
-.module("communityApp", ["ui.router", "ngResource", "ui.bootstrap", "truncate"])
+.module("communityApp", ["ui.router", "ngResource", "ui.bootstrap", "truncate", "ngTagsInput"])
 .config(["$stateProvider", RouterFunction])
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
 .factory("CommentFactory", ["$resource", CommentFactoryFunction])
 .controller("ProductIndexController", ["CommunityFactory", ProductIndexControllerFunction])
 .controller("ProductShowController", ["CommunityFactory","CommentFactory", "$stateParams", "$state", ProductShowControllerFunction])
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
+.controller('MainCtrl', function($scope, $http){
+  $scope.tags = [
+    {text: 'Tag1'},
+    {text: 'Tag2'},
+    {text: 'Tag3'}
+  ];
+});
+
 
 function RouterFunction($stateProvider){
   $stateProvider.state("welcome", {

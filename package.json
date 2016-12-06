@@ -6,7 +6,8 @@
   "dependencies": {
     "angular-ui-bootstrap": "^2.3.0",
     "angular-ui-router": "^0.3.2",
-    "init": "^0.1.2"
+    "init": "^0.1.2",
+    "ng-tags-input": "^3.1.1"
   },
   "devDependencies": {},
   "scripts": {

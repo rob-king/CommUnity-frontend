@@ -6,7 +6,6 @@ angular
 .controller("ProductIndexController", ["CommunityFactory", ProductIndexControllerFunction])
 .controller("ProductShowController", ["CommunityFactory","CommentFactory", "$stateParams", ProductShowControllerFunction])
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
-.controller("ProductEditController", ["CommunityFactory", "$state", "$stateParams", ProductEditControllerFunction])
 
 function RouterFunction($stateProvider){
   $stateProvider.state("welcome", {
@@ -34,15 +33,9 @@ function RouterFunction($stateProvider){
     templateUrl: "js/ng-views/products/show.html",
     controller: "ProductShowController",
     controllerAs: "vm"
-  });
-  $stateProvider.state("productEdit", {
-    url: "/products/:id/edit",
-    templateUrl: "js/ng-views/products/edit.html",
-    controller: "ProductEditController",
-    controllerAs: "vm"
   })
-}
 
+}
 
 function CommunityFactoryFunction($resource){
   return $resource("http://localhost:3000/products/:id", {}, {
@@ -55,6 +48,7 @@ function CommentFactoryFunction($resource) {
     update: {method: "PUT"}
   })
 }
+
 function ProductIndexControllerFunction(CommunityFactory){
   this.products = CommunityFactory.query()
 }
@@ -62,6 +56,14 @@ function ProductIndexControllerFunction(CommunityFactory){
 function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateParams, $state){
   this.product = CommunityFactory.get({id: $stateParams.id})
   this.comment = new CommentFactory()
+
+  this.update = function(){
+    this.product.$update({id: $stateParams.id})
+  }
+
+  this.destroy = function($state){
+    this.product.$delete({id: $stateParams.id}).then(response => $state.go("productIndex"))
+  }
 
   this.addComment = function(){
     this.comment.$save({product_id: $stateParams.id}).then(console.log("whoa"))
@@ -76,15 +78,5 @@ function ProductNewControllerFunction(CommunityFactory, $state){
   this.product = new CommunityFactory();
   this.create = function(){
     this.product.$save().then(response => $state.go("productIndex"))
-  }
-}
-
-function ProductEditControllerFunction(CommunityFactory, $state, $stateParams){
-  this.product = CommunityFactory.get({id: $stateParams.id})
-  this.update = function(){
-    this.product.$update({id: $stateParams.id}).then(response => $state.go("productIndex"))
-  }
-  this.destroy = function(){
-    this.product.$delete({id: $stateParams.id}).then(response => $state.go("productIndex"))
   }
 }

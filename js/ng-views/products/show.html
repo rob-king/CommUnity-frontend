@@ -73,7 +73,7 @@
         {{comment.body}}
       </p>
       <h4>Submitted by {{comment.author}}</h4>
-      <button type="submit" class="btn btn-default" data-ng-click="vm.removeComment()">Delete</button>
+      <button type="submit" class="btn btn-default" data-ng-click="vm.removeComment(comment.id)">Delete</button>
     </div>
   </div>
 

@@ -73,8 +73,9 @@ function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateP
     })
   }
 
-  this.removeComment = function(){
-    this.comment.$delete({product_id: $stateParams.id}).then(console.log("delete comment"))
+  this.removeComment = function(id){
+    console.log(id)
+    this.comment.$delete({product_id: $stateParams.id, id: id}).then(console.log("delete comment"))
   }
 
   this.addVote = function(){

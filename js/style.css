@@ -51,6 +51,7 @@ p.navbar-brand {
 .navbar-default .navbar-nav:hover > li > a {
   color: white;
   opacity: 0.75;
+}
 
 .jumbotron {
   background-color:#E0EAFC ;

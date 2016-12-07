@@ -60,15 +60,30 @@ function TagsFactoryFunction($resource) {
 
 function ProductIndexControllerFunction(CommunityFactory, TagsFactory, $stateParams, $resource, $state){
   this.products = CommunityFactory.query()
-  // this.tag = this.product.categories
-  // console.log(this.tag)
-  // this.products.categories.query()
-  // this.tags = TagsFactory
-  // console.log(this.tags)
-  // $scope.tags = this.tags.get({id:$stateParams.id})
-  // console.log($scope.tags)
-  // this.tags = TagsFactory.query()
-  // TagsFactory.query({product_id: $stateParams.id}).then(console.log("popping tags"))
+
+  product = CommunityFactory.query()
+
+  product.$promise.then((response) => {
+    stuff = response
+    // morestuff = stuff[0].categories[0].name
+    //
+    // console.log(stuff[0].categories[0].name)
+
+
+    // var stuffb = stuffa
+
+    for (var a = 0; a < stuff.length; a++) {
+      var morestuff =[];
+
+      console.log(stuff[a]);
+      for(var b = 0; b < stuff[a].length; b++){
+        morestuff.push(stuff[a][b]);
+      }
+      console.log(morestuff)
+
+    }
+  })
+
 }
 
 function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateParams, $state){

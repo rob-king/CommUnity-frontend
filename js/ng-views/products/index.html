@@ -13,19 +13,16 @@
     </div>
 
     <div class="col-sm-4">
-      <div ng-controller="MainCtrl">
-        <tags-input ng-model="tags"></tags>
-          <p>Model: {{tags}}<p>
+      <div data-ng-repeat="category in product.categories">
+        <p>{{category.name}}<p>
         </div>
+      </div>
+
     </div>
 
-
-
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <hr></hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <hr></hr>
+      </div>
     </div>
   </div>
-</div>

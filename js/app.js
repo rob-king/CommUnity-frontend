@@ -3,16 +3,10 @@ angular
 .config(["$stateProvider", RouterFunction])
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
 .factory("CommentFactory", ["$resource", CommentFactoryFunction])
+.factory("TagsFactory", ["$resource", TagsFactoryFunction])
 .controller("ProductIndexController", ["CommunityFactory", ProductIndexControllerFunction])
 .controller("ProductShowController", ["CommunityFactory","CommentFactory", "$stateParams", "$state", ProductShowControllerFunction])
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
-.controller('MainCtrl', function($scope, $http){
-  $scope.tags = [
-    {text: 'Tag1'},
-    {text: 'Tag2'},
-    {text: 'Tag3'}
-  ];
-});
 
 
 function RouterFunction($stateProvider){
@@ -57,8 +51,24 @@ function CommentFactoryFunction($resource) {
   })
 }
 
-function ProductIndexControllerFunction(CommunityFactory){
+function TagsFactoryFunction($resource) {
+  return $resource("http://localhost:3000/products/1/tags", {}, {
+    update: {method: "PUT"}
+  })
+}
+
+
+function ProductIndexControllerFunction(CommunityFactory, TagsFactory, $stateParams, $resource, $state){
   this.products = CommunityFactory.query()
+  // this.tag = this.product.categories
+  // console.log(this.tag)
+  // this.products.categories.query()
+  // this.tags = TagsFactory
+  // console.log(this.tags)
+  // $scope.tags = this.tags.get({id:$stateParams.id})
+  // console.log($scope.tags)
+  // this.tags = TagsFactory.query()
+  // TagsFactory.query({product_id: $stateParams.id}).then(console.log("popping tags"))
 }
 
 function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateParams, $state){

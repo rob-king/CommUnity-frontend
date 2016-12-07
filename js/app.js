@@ -52,7 +52,7 @@ function CommentFactoryFunction($resource) {
 }
 
 function TagsFactoryFunction($resource) {
-  return $resource("http://localhost:3000/products/1/tags", {}, {
+  return $resource("http://localhost:3000/products/:product_id/tags", {}, {
     update: {method: "PUT"}
   })
 }
@@ -60,29 +60,7 @@ function TagsFactoryFunction($resource) {
 
 function ProductIndexControllerFunction(CommunityFactory, TagsFactory, $stateParams, $resource, $state){
   this.products = CommunityFactory.query()
-
-  product = CommunityFactory.query()
-
-  product.$promise.then((response) => {
-    stuff = response
-    // morestuff = stuff[0].categories[0].name
-    //
-    // console.log(stuff[0].categories[0].name)
-
-
-    // var stuffb = stuffa
-
-    for (var a = 0; a < stuff.length; a++) {
-      var morestuff =[];
-
-      console.log(stuff[a]);
-      for(var b = 0; b < stuff[a].length; b++){
-        morestuff.push(stuff[a][b]);
-      }
-      console.log(morestuff)
-
-    }
-  })
+  products = CommunityFactory.query()
 
 }
 

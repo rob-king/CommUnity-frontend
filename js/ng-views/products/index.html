@@ -3,7 +3,7 @@
     <div class="col-sm-2">
       <img ng-src="{{product.imageURL}}" class="imageIndex img-responsive">
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <a data-ui-sref="productShow({id: product.id})"><h2>{{product.name}}</h2></a>
       <p>{{product.description | words: 10}}</p>
       <p>
@@ -12,21 +12,16 @@
       </p>
     </div>
 
-    <div class="col-sm-4">
-      <!-- <div data-ng-repeat="category in product.categories">
-        <p>{{category.name}}<p>
-        </div> -->
-        <hr></hr>
-        <tags-input ng-model="morestuff">
-      </tags-input>
+    <div class="col-sm-2">
+      <div data-ng-repeat="category in product.categories">
+        {{category.name}}
+      </div>
     </div>
   </div>
 
-</div>
-
-<div class="row">
-  <div class="col-sm-12">
-    <hr></hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <hr></hr>
+    </div>
   </div>
-</div>
 </div>

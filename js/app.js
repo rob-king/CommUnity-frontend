@@ -81,13 +81,17 @@ function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateP
   this.addComment = function(){
     this.comment.$save({product_id: $stateParams.id}).then((response) => {
       this.product.comments = response.comments
+      this.comment.author = ""
+      this.comment.body =  ""
+
     })
   }
 
   this.removeComment = function(id){
-    console.log(id)
     this.comment.$delete({product_id: $stateParams.id, id: id}).then((response) => {
       this.product = response
+      this.comment.author = ""
+      this.comment.body =  ""
     })
   }
 

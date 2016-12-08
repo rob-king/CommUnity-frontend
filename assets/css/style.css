@@ -126,6 +126,9 @@ div.row.ng-scope {
 button.btn-default {
   color: #005C97;
 }
+div.row {
+  background-color: #E0EAFC;
+}
 
 .imageIndex {
   border: 5px double black;

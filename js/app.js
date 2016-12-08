@@ -40,19 +40,19 @@ function RouterFunction($stateProvider){
 }
 
 function CommunityFactoryFunction($resource){
-  return $resource("http://community-api.herokuapp.com/products/:id", {}, {
+  return $resource("https://community-api.herokuapp.com/products/:id", {}, {
     update: {method: "PUT"}
   })
 }
 
 function CommentFactoryFunction($resource) {
-  return $resource("http://community-api.herokuapp.com/products/:product_id/comments/:id", {}, {
+  return $resource("https://community-api.herokuapp.com/products/:product_id/comments/:id", {}, {
     update: {method: "PUT"}
   })
 }
 
 function TagsFactoryFunction($resource) {
-  return $resource("http://community-api.herokuapp.com/products/:product_id/tags", {}, {
+  return $resource("https://community-api.herokuapp.com/products/:product_id/tags", {}, {
     update: {method: "PUT"}
   })
 }

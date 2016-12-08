@@ -53,22 +53,22 @@
 
 ##Project Notes:
 1. Card format for product display on the index.html page.
-- Contents of Card:
-- Logo of product.
-- Title of product.
-- Up-voting count.
-- Number of comments contributed to the feedback section of product.
-- Brief product description.
-- Display of product tags.
+  - Contents of Card:
+  - Logo of product.
+  - Title of product.
+  - Up-voting count.
+  - Number of comments contributed to the feedback section of product.
+  - Brief product description.
+  - Display of product tags.
 2. Individual product page will display detailed information of a product.
-- Contents of Individual Product Page:
-- Logo of product.
-- Title of product.
-- Up-voting count.
-- Listing of author(s) of product idea.
-- Photo(s) and video(s) showcasing product idea.
-- Detailed description of the product presented.
-- Full listing of feedback section (Idea: Do we want to up-vote on comments?).
+  - Contents of Individual Product Page:
+  - Logo of product.
+  - Title of product.
+  - Up-voting count.
+  - Listing of author(s) of product idea.
+  - Photo(s) and video(s) showcasing product idea.
+  - Detailed description of the product presented.
+  - Full listing of feedback section (Idea: Do we want to up-vote on comments?).
 
 ##Unresolved Issues
 - Mobile responsive menu stopped working.

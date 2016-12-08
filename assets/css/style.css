@@ -11,11 +11,6 @@ p  {
   color: #005C97;
 }
 
-/*a {
-font-family: 'Open Sans', sans-serif;
-font-weight: 600;
-font-size: 20px;
-}*/
 
 a:link {
   text-decoration: none;
@@ -41,6 +36,9 @@ a:active {
 
 footer {
   height: 50px;
+  background: blue;
+  padding: 10px;
+  color: #FFFFFF;
 }
 
 h2 {
@@ -55,6 +53,11 @@ hr {
 li {
   display:inline;
 }
+
+.heightSpace {
+  height: 30px;
+}
+
 
 .authorImage {
   border: 5px solid black;
@@ -90,7 +93,7 @@ li {
 }
 
 .header_show {
-  background: url('/assets/img/bg-6-full.jpg');
+  background: url('CommUnity-frontend/assets/img/bg-6-full.jpg');
 }
 
 p.navbar-brand {

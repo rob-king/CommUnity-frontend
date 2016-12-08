@@ -93,7 +93,7 @@ li {
 }
 
 .header_show {
-  background: url('CommUnity-frontend/assets/img/bg-6-full.jpg');
+  background-image: url('assets/img/bg-6-full.jpg');
 }
 
 p.navbar-brand {

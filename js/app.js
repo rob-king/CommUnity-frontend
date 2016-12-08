@@ -3,16 +3,10 @@ angular
 .config(["$stateProvider", RouterFunction])
 .factory("CommunityFactory", ["$resource", CommunityFactoryFunction])
 .factory("CommentFactory", ["$resource", CommentFactoryFunction])
+.factory("TagsFactory", ["$resource", TagsFactoryFunction])
 .controller("ProductIndexController", ["CommunityFactory", ProductIndexControllerFunction])
 .controller("ProductShowController", ["CommunityFactory","CommentFactory", "$stateParams", "$state", ProductShowControllerFunction])
 .controller("ProductNewController", ["CommunityFactory", "$state", ProductNewControllerFunction])
-.controller('MainCtrl', function($scope, $http){
-  $scope.tags = [
-    {text: 'Tag1'},
-    {text: 'Tag2'},
-    {text: 'Tag3'}
-  ];
-});
 
 
 function RouterFunction($stateProvider){
@@ -57,8 +51,17 @@ function CommentFactoryFunction($resource) {
   })
 }
 
-function ProductIndexControllerFunction(CommunityFactory){
+function TagsFactoryFunction($resource) {
+  return $resource("http://localhost:3000/products/:product_id/tags", {}, {
+    update: {method: "PUT"}
+  })
+}
+
+
+function ProductIndexControllerFunction(CommunityFactory, TagsFactory, $stateParams, $resource, $state){
   this.products = CommunityFactory.query()
+  products = CommunityFactory.query()
+
 }
 
 function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateParams, $state){
@@ -83,7 +86,9 @@ function ProductShowControllerFunction(CommunityFactory, CommentFactory, $stateP
 
   this.removeComment = function(id){
     console.log(id)
-    this.comment.$delete({product_id: $stateParams.id, id: id}).then(console.log("delete comment"))
+    this.comment.$delete({product_id: $stateParams.id, id: id}).then((response) => {
+      this.product = response
+    })
   }
 
   this.addVote = function(){

@@ -1,3 +1,7 @@
+.resize {
+  padding-top: 60px;
+}
+
 h2, h3 {
   font-family: 'Open Sans', sans-serif;
   color: #e53935;
@@ -7,25 +11,77 @@ p  {
   color: #005C97;
 }
 
-a {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+/*a {
+font-family: 'Open Sans', sans-serif;
+font-weight: 600;
+font-size: 20px;
+}*/
+
+a:link {
+  text-decoration: none;
 }
+
+a:visited {
+  text-decoration: none;
+}
+
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
 
 .border {
   border: 1px solid black;
 }
 
+footer {
+  height: 100px;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+hr {
+  margin: 5px;
+}
+
+li {
+  display:inline;
+}
+
+.authorImage {
+  border: 5px solid black;
+  border-radius: 100px;
+  margin: 10px;
+}
+
+.buttonPadding {
+  padding: 5px;
+  margin: 2px;
+  width: 80px;
+}
+
+.buttonPadding2 {
+  padding: 25px;
+}
+
 /*gradient provided by @_ighosh at uiGrandients.com */
 .navbar, .home-callout {
-    background: #00c6ff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 .navbar {
   border: none;
+  text-transform: uppercase;
 }
 
 .navbar-default .navbar-brand {
@@ -33,14 +89,19 @@ a {
   font-family: 'Open Sans' sans-serif;
 }
 
+.header_show {
+  background: url('/assets/img/bg-6-full.jpg');
+}
+
 p.navbar-brand {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .navbar-default .navbar-nav > li > a {
   color: white;
 }
+
 
 .navbar-default .navbar-brand:hover {
   color: white;
@@ -58,6 +119,8 @@ div.row.ng-scope {
 
 .jumbotron {
   background-color:#E0EAFC ;
+  height: 100vh;
+  /*width: 100vw;*/
 }
 
 button.btn-default {
@@ -70,6 +133,4 @@ div.row {
 .imageIndex {
   border: 5px double black;
   border-radius: 10px;
-  /*display: block;
-  margin: 0 auto;*/
 }

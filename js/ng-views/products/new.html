@@ -1,33 +1,51 @@
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-6">
     <h2>Submit Product</h2>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   </div>
-  <div class="col-sm-4">
-    <form>
-      <div class="form-group">
-        <label for="productname">Project Name</label>
-        <input type="text" class="form-control" placeholder="Product Name" data-ng-model="vm.product.name">
+  <div class="col-sm-6">
+    <form name="newProduct">
+      <div class="form-group" ng-class="{ 'has-error' : newProduct.productName.$touched && newProduct.productName.$invalid }">
+        <label for="productname">Project Name*</label>
+        <input type="text" name="productName" class="form-control" data-ng-model="vm.product.name" required>
+        <span ng-show="newProduct.productName.$touched && newProduct.productName.$invalid"> *Required</span>
       </div>
-      <div class="form-group">
-        <label for="projectimage">Project Image</label>
-        <input type="text" class="form-control" placeholder="Image URL" data-ng-model="vm.product.imageURL">
+
+      <div class="form-group" ng-class="{ 'has-error' : newProduct.productURL.$touched && newProduct.productURL.$invalid }">
+        <label for="projectimage">Project Image*</label>
+        <input type="url" name="productURL" class="form-control" data-ng-model="vm.product.imageURL" value="http://lorempixel.com/400/200/technics/" required>
+        <span ng-show="newProduct.productURL.$touched && newProduct.productURL.$invalid"> *Required</span>
       </div>
-      <div class="form-group">
-        <label for="productdescription">Product Description</label>
-        <textarea class="form-control" rows="3" data-ng-model="vm.product.description"></textarea>
+
+      <div class="form-group" ng-class="{ 'has-error' : newProduct.productDescription.$touched && newProduct.productDescription.$invalid }">
+        <label for="productdescription">Product Description*</label>
+        <textarea name="productDescription" class="form-control" rows="5" data-ng-model="vm.product.description" required></textarea>
+        <span ng-show="newProduct.productDescription.$touched && newProduct.productDescription.$invalid">*Required</span>
       </div>
+
+      <div class="form-group" ng-class="{ 'has-error' : newProduct.projectAuthor.$touched && newProduct.projectAuthor.$invalid }">
+        <label for="projectauthorlbl">Author Name*</label>
+        <input type="text" name="projectAuthor" class="form-control" data-ng-model="vm.product.author" required>
+        <span ng-show="newProduct.projectAuthor.$touched && newProduct.projectAuthor.$invalid"> *Required</span>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-error' : newProduct.authorAvatar.$touched && newProduct.authorAvatar.$invalid }">
+        <label for="authorAvatar">Author Image*</label>
+        <input type="url" name="authorAvatar" class="form-control" data-ng-model="vm.product.authorAvatar" required>
+        <span ng-show="newProduct.authorAvatar.$touched && newProduct.authorAvatar.$invalid"> *Required</span>
+      </div>
+
       <button type="submit" class="btn btn-default" data-ng-click="vm.create()">Submit</button>
     </form>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   </div>
 </div>

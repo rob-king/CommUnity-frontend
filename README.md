@@ -1,5 +1,11 @@
 #CommUnity (Pasakhom) - ReadMe Document
 
+Deployed Front-end: https://rob-king.github.io/CommUnity-frontend/
+Deployed Back-end: https://community-api.herokuapp.com/products/
+
+Front-end Repo: https://github.com/rob-king/CommUnity-frontend
+Back-end Repo: https://github.com/rob-king/CommUnity-api
+
 **Description:** Community is a application that contains a listing of user submitted product ideas that contribute to the social good of others. There are similar applications out there but, they strictly cater to for-profit entities.
 
 ##Tasks
